@@ -126,6 +126,48 @@ const QUOTES = [{
   quote: "You are never too old to set another goal or to dream a new dream."
 }]
 
+const JOKES = [{
+  id: 1,
+  joke: "Why don’t scientists trust atoms? Because they make up everything!"
+},
+{
+  id: 2,
+  joke: "Why did the scarecrow win an award? Because he was outstanding in his field!"
+},
+{
+  id: 3,
+  joke: "Why don’t skeletons fight each other? They don’t have the guts."
+},
+{
+  id: 4,
+  joke: "What do you get when you cross a snowman and a vampire? Frostbite."
+},
+{
+  id: 5,
+  joke: "Why did the bicycle fall over? Because it was two-tired!"
+},
+{
+  id: 6,
+  joke: "What’s orange and sounds like a parrot? A carrot!"
+},
+{
+  id: 7,
+  joke: "Why don’t programmers like nature? It has too many bugs."
+},
+{
+  id: 8,
+  joke: "Why did the math book look sad? Because it had too many problems."
+},
+{
+  id: 9,
+  joke: "What do you call fake spaghetti? An impasta!"
+},
+{
+  id: 10,
+  joke: "Why did the golfer bring two pairs of pants? In case he got a hole in one!"
+}]
+
+
 app.get("/randomquote" , (req , res) => {
   const randomIndex = Math.floor(Math.random() * QUOTES.length);
   const randomQuote = QUOTES[randomIndex];
@@ -133,4 +175,10 @@ app.get("/randomquote" , (req , res) => {
   res.json(randomQuote);
 })
 
+app.get("/randomjoke" , (req , res) => {
+  const randomIndex = Math.floor(Math.random() * JOKES.length);
+  const randomJoke = JOKES[randomIndex];
+
+  res.json(randomJoke);
+})
 app.listen(8080)
